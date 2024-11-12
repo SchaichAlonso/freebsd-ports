@@ -1,0 +1,21 @@
+PORTNAME=	mqtt
+DISTVERSIONPREFIX=	v
+DISTVERSION=	${QT6_VERSION}
+CATEGORIES=	net
+PKGNAMEPREFIX=	qt6-
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Qt Module to implement MQTT protocol
+
+USES=		cmake compiler:c++17-lang qt-dist:6
+USE_GITHUB=	yes
+GH_TUPLE=	qt:qtmqtt:${DISTVERSIONFULL}
+USE_QT=		base
+
+# disable optional dependencies
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Qt6Quick
+CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebSockets
+CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6Gui
+CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6Widgets
+
+.include <bsd.port.mk>

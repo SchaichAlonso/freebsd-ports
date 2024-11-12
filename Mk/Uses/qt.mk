@@ -166,7 +166,7 @@ _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 			uitools webglplugin websockets-qml \
 			widgets x11extras xml xmlpatterns
 
-_USE_QT6_ONLY=		5compat base coap graphs grpc httpserver languageserver lottie pdf positioning \
+_USE_QT6_ONLY=		5compat base coap graphs grpc httpserver languageserver lottie mqtt pdf positioning \
 			quick3dphysics quickeffectmaker shadertools tools translations \
 			sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
 
@@ -267,6 +267,9 @@ qt-location_LIB=	libQt${_QT_LIBVER}Location.so
 
 qt-l10n_PORT=		misc/${_QT_RELNAME}-l10n
 qt-l10n_PATH=		${_QT_RELNAME}-l10n>=${_QT_VERSION:R:R}
+
+qt-mqtt_PORT=		net/${_QT_RELNAME}-mqtt
+qt-mqtt_LIB=		libQt${_QT_LIBVER}Mqtt.so
 
 qt-multimedia_PORT=	multimedia/${_QT_RELNAME}-multimedia
 qt-multimedia_LIB=	libQt${_QT_LIBVER}Multimedia.so

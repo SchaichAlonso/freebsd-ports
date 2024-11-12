@@ -28,7 +28,7 @@ _COMMON_DISTS=		3d base charts connectivity datavis3d declarative imageformats l
 _QT5_DISTS=		gamepad graphicaleffects quickcontrols \
 			quickcontrols2 script webglplugin \
 			x11extras xmlpatterns
-_QT6_DISTS=		5compat coap doc graphs grpc httpserver languageserver lottie positioning \
+_QT6_DISTS=		5compat coap doc graphs grpc httpserver languageserver lottie mqtt positioning \
 			quick3dphysics quickeffectmaker shadertools
 
 _QT_DISTS=		${_COMMON_DISTS} \
@@ -97,7 +97,7 @@ _QT6_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
 
 # Effective master sites and distfile values
 # net/qt6-coap has no submodule distfile and uses USE_GITHUB
-.  if ${_QT_DIST} != coap
+.  if ${_QT_DIST} != coap && ${_QT_DIST} != mqtt
 MASTER_SITES=			${_QT${_QT_VER}_MASTER_SITES${_KDE_${_QT_DIST}:D_kde}}
 MASTER_SITE_SUBDIR=		${_QT${_QT_VER}_MASTER_SITE_SUBDIR${_KDE_${_QT_DIST}:D_kde}}
 DISTNAME=			${_QT${_QT_VER}_DISTNAME${_KDE_${_QT_DIST}:D_kde}}
