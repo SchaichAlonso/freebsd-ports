@@ -1,0 +1,152 @@
+--- include/orm/exceptions/domainerror.hpp
++++ include/orm/exceptions/domainerror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyORM Domain exception. */
+-    class DomainError : public LogicError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT DomainError : public LogicError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using LogicError::LogicError;
+--- include/orm/exceptions/invalidargumenterror.hpp
++++ include/orm/exceptions/invalidargumenterror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyORM invalid argument exception. */
+-    class InvalidArgumentError : public LogicError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT InvalidArgumentError : public LogicError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using LogicError::LogicError;
+--- include/orm/exceptions/invalidformaterror.hpp
++++ include/orm/exceptions/invalidformaterror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyORM invalid format exception. */
+-    class InvalidFormatError : public LogicError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT InvalidFormatError : public LogicError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using LogicError::LogicError;
+--- include/orm/exceptions/invalidtemplateargumenterror.hpp
++++ include/orm/exceptions/invalidtemplateargumenterror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyORM invalid template argument exception. */
+-    class InvalidTemplateArgumentError : public InvalidArgumentError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT InvalidTemplateArgumentError : public InvalidArgumentError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using InvalidArgumentError::InvalidArgumentError;
+--- include/orm/exceptions/lostconnectionerror.hpp
++++ include/orm/exceptions/lostconnectionerror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyORM lost connection exception. */
+-    class LostConnectionError : public LogicError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT LostConnectionError : public LogicError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using LogicError::LogicError;
+--- include/orm/exceptions/multiplecolumnsselectederror.hpp
++++ include/orm/exceptions/multiplecolumnsselectederror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! Found more that one column (used by DatabaseConnection::scalar()). */
+-    class MultipleColumnsSelectedError : public RuntimeError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT MultipleColumnsSelectedError : public RuntimeError // clazy:exclude=copyable-polymorphic
+     {
+     public:
+         /*! Constructor. */
+--- include/orm/exceptions/multiplerecordsfounderror.hpp
++++ include/orm/exceptions/multiplerecordsfounderror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! Found more that one record (used by Builder::sole()). */
+-    class MultipleRecordsFoundError : public RuntimeError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT MultipleRecordsFoundError : public RuntimeError // clazy:exclude=copyable-polymorphic
+     {
+     public:
+         /*! Constructor. */
+--- include/orm/exceptions/ormerror.hpp
++++ include/orm/exceptions/ormerror.hpp
+@@ -6,6 +6,7 @@
+ TINY_SYSTEM_HEADER
+ 
+ #include "orm/macros/commonnamespace.hpp"
++#include "orm/macros/export.hpp"
+ 
+ TINYORM_BEGIN_COMMON_NAMESPACE
+ 
+@@ -13,7 +14,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyORM exceptions tag, all TinyORM exceptions are derived from this class. */
+-    class OrmError // NOLINT(cppcoreguidelines-special-member-functions) clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT OrmError // NOLINT(cppcoreguidelines-special-member-functions) clazy:exclude=copyable-polymorphic
+     {
+     public:
+         /*! Pure virtual destructor. */
+--- include/orm/exceptions/outofrangeerror.hpp
++++ include/orm/exceptions/outofrangeerror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyDrivers out of range exception. */
+-    class OutOfRangeError : public LogicError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT OutOfRangeError : public LogicError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using LogicError::LogicError;
+--- include/orm/exceptions/recordsnotfounderror.hpp
++++ include/orm/exceptions/recordsnotfounderror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! Found zero records (used by Builder::sole()). */
+-    class RecordsNotFoundError : public RuntimeError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT RecordsNotFoundError : public RuntimeError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using RuntimeError::RuntimeError;
+--- include/orm/exceptions/searchpathemptyerror.hpp
++++ include/orm/exceptions/searchpathemptyerror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! The PostgreSQL 'search_path' is empty exception (TinyORM). */
+-    class SearchPathEmptyError : public InvalidArgumentError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT SearchPathEmptyError : public InvalidArgumentError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using InvalidArgumentError::InvalidArgumentError;
+--- include/orm/exceptions/sqlitedatabasedoesnotexisterror.hpp
++++ include/orm/exceptions/sqlitedatabasedoesnotexisterror.hpp
+@@ -13,7 +13,7 @@ namespace Orm::Exceptions
+ {
+ 
+     /*! TinyORM SQLite database doesn't exist exception. */
+-    class SQLiteDatabaseDoesNotExistError : public InvalidArgumentError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT SQLiteDatabaseDoesNotExistError : public InvalidArgumentError // clazy:exclude=copyable-polymorphic
+     {
+     public:
+         /*! Path constructor (QString). */
+--- include/orm/exceptions/sqltransactionerror.hpp
++++ include/orm/exceptions/sqltransactionerror.hpp
+@@ -14,7 +14,7 @@ namespace Orm::Exceptions
+ 
+     /*! TinyORM Sql transaction exception. TinyOrm library compiled against
+         the TinyDrivers doesn't use this exception class. */
+-    class SqlTransactionError : public SqlError // clazy:exclude=copyable-polymorphic
++    class TINYORM_EXPORT SqlTransactionError : public SqlError // clazy:exclude=copyable-polymorphic
+     {
+         /*! Inherit constructors. */
+         using SqlError::SqlError; // NOLINT(cppcoreguidelines-rvalue-reference-param-not-moved)
+
