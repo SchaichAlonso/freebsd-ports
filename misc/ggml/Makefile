@@ -14,23 +14,21 @@ BROKEN_i386=	compilation fails: LLVM ERROR: out of memory
 
 BUILD_DEPENDS=	spirv-headers>0:graphics/spirv-headers
 
-USES=		cmake:testing compiler:c++17-lang llvm:build,min=22 python:run shebangfix
+USES=		cmake:testing compiler:c++17-lang llvm:build,min=21 python:run shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggml-org
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		GGML_BACKEND_DL \
+		GGML_CPU_ALL_VARIANTS
 CMAKE_OFF=	GGML_NATIVE \
 		GGML_BUILD_TESTS \
-		GGML_BUILD_EXAMPLES \
-		GGML_SSE42 \
-		GGML_AVX \
-		GGML_AVX2 \
-		GGML_BMI2 \
-		GGML_FMA \
-		GGML_F16C
+		GGML_BUILD_EXAMPLES
 CMAKE_TESTING_ON=	GGML_BUILD_TESTS
+
+CMAKE_ARGS+=	-DGGML_BACKEND_DIR=${PREFIX}/lib
 
 BINARY_ALIAS=	git=false
 

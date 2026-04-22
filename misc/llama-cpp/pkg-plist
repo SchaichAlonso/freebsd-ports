@@ -4,14 +4,11 @@ bin/llama
 %%EXAMPLES%%bin/llama-bench
 %%EXAMPLES%%bin/llama-cli
 %%EXAMPLES%%bin/llama-completion
-%%EXAMPLES%%bin/llama-convert-llama2c-to-ggml
-%%EXAMPLES%%bin/llama-cvector-generator
 %%EXAMPLES%%bin/llama-debug
 %%EXAMPLES%%bin/llama-debug-template-parser
 %%EXAMPLES%%bin/llama-diffusion-cli
 %%EXAMPLES%%bin/llama-embedding
 %%EXAMPLES%%bin/llama-eval-callback
-%%EXAMPLES%%bin/llama-export-lora
 %%EXAMPLES%%bin/llama-finetune
 %%EXAMPLES%%bin/llama-fit-params
 %%EXAMPLES%%bin/llama-gen-docs
