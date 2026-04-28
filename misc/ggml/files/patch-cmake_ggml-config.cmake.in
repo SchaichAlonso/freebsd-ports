@@ -1,0 +1,10 @@
+--- cmake/ggml-config.cmake.in.orig	2026-04-29 05:36:44.532944000 +0900
++++ cmake/ggml-config.cmake.in	2026-04-29 05:37:17.791075000 +0900
+@@ -112,6 +112,7 @@
+     add_library(ggml::ggml UNKNOWN IMPORTED)
+     set_target_properties(ggml::ggml
+         PROPERTIES
++            INTERFACE_INCLUDE_DIRECTORIES "${GGML_INCLUDE_DIR}"
+             IMPORTED_LOCATION "${GGML_LIBRARY}")
+ 
+     find_library(GGML_BASE_LIBRARY ggml-base
