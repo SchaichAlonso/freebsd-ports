@@ -20,7 +20,7 @@ lib/cmake/ggml/ggml-config-version.cmake
 lib/cmake/ggml/ggml-config.cmake
 lib/libggml-base.so
 lib/libggml-base.so.0
-lib/libggml-base.so.%%DISTVERSION%%
+lib/libggml-base.so.0.23.0
 lib/libggml-cpu-alderlake.so
 lib/libggml-cpu-cannonlake.so
 lib/libggml-cpu-cascadelake.so
@@ -38,5 +38,5 @@ lib/libggml-cpu-zen4.so
 %%VULKAN%%lib/libggml-vulkan.so
 lib/libggml.so
 lib/libggml.so.0
-lib/libggml.so.0.%%DISTVERSION%%.0
+lib/libggml.so.0.23.0
 libdata/pkgconfig/ggml.pc
